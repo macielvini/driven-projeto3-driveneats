@@ -20,46 +20,102 @@
     <main>
       <div class="food-container">
         <h2>Primeiro seu prato</h2>
-        <div class="food-carrousel">
-          <div class="food">
+        <div class="carrousel meals">
+          <div class="card meal" onclick="addBorder(this)">
             <img src="media/pizza.jpg" alt="">
             <h3>Pizza de Frango</h3>
             <p class="descricao">Um pouco de frango, um pouco de queijo</p>
-            <p>R$ <span>14,90</span></p>
+            <p>R$ <span>14,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
           </div>
-
+          <div class="card meal" onclick="addBorder(this)">
+            <img src="media/pizza.jpg" alt="">
+            <h3>Pizza de Frango</h3>
+            <p class="descricao">Um pouco de frango, um pouco de queijo</p>
+            <p>R$ <span>14,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
+          </div>
         </div>
       </div>
+
       <div class="food-container">
         <h2>Agora sua bebida</h2>
-        <div class="food-carrousel">
-          <div class="food">
+        <div class="carrousel drinks">
+          <div class="card drink" onclick="addBorder(this)">
             <img src="media/coca.jpg" alt="">
             <h3>Coca-cola</h3>
             <p class="descricao">Lata 350ml</p>
-            <p>R$ <span>4,90</span></p>
+            <p>R$ <span>4,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
           </div>
-
+          <div class="card drink" onclick="addBorder(this)">
+            <img src="media/coca.jpg" alt="">
+            <h3>Coca-cola</h3>
+            <p class="descricao">Lata 350ml</p>
+            <p>R$ <span>4,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
+          </div>
         </div>
       </div>
+
       <div class="food-container">
         <h2>Por fim, sua sobremesa</h2>
-        <div class="food-carrousel">
-          <div class="food">
+        <div class="carrousel desserts">
+          <div class="card dessert" onclick="addBorder(this)">
             <img src="media/bolinho.jpg" alt="">
             <h3>Cupcake</h3>
             <p class="descricao">Apenas cupcake</p>
-            <p>R$ <span>4,90</span></p>
+            <p>R$ <span>7,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
           </div>
-
+          <div class="card dessert" onclick="addBorder(this)">
+            <img src="media/bolinho.jpg" alt="">
+            <h3>Cupcake</h3>
+            <p class="descricao">Apenas cupcake</p>
+            <p>R$ <span>7,90</span>
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </p>
+          </div>
         </div>
       </div>
+
     </main>
+
     <footer>
-      <button>Selecione os 3 itens
+      <button onclick="order()">Selecione os 3 itens
         para fechar o pedido</button>
     </footer>
+
+    <div class="overlay hidden">
+    </div>
+
+    <div class="close-order hidden">
+      <h2>Confirme seu pedido</h2>
+      <div class="item">
+        <span>Frango Yin Yang</span>
+        <span>14,90</span>
+      </div>
+      <div class="item">
+        <span>Frango Yin Yang</span>
+        <span>14,90</span>
+      </div>
+      <div class="total">
+        <span>TOTAL</span>
+        <span>R$ 27,90</span>
+      </div>
+      <button>Tudo certo, pode pedir!</button>
+      <button onclick="cancelOrder()">Cancelar</button>
+    </div>
+
   </div>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 
 </html>
