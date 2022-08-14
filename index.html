@@ -94,7 +94,7 @@
     <div class="overlay hidden">
     </div>
 
-    <div class="close-order hidden">
+    <div class="close-order">
       <h2>Confirme seu pedido</h2>
       <div class="receipt">
       </div>
@@ -102,7 +102,17 @@
         <span>TOTAL</span>
         <span id="total">0</span>
       </div>
-      <button>Tudo certo, pode pedir!</button>
+
+      <form id="clientInfo" action="javascript:;" method="get" onsubmit="whatsappOrder()">
+        <fieldset>
+          <legend>Preencha os campos abaixo:</legend>
+
+          <input id="clientName" type="text" placeholder="Nome" required>
+          <textarea id="clientAdress" type="text" placeholder="Endereço" rows="2" required></textarea>
+        </fieldset>
+      </form>
+
+      <button type="submit" form="clientInfo">Tudo certo, pode pedir!</button>
       <button onclick="cancelOrder()">Cancelar</button>
     </div>
 

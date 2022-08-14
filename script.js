@@ -6,6 +6,12 @@ let totalSum = 0;
 let selectedCounter = 0;
 
 
+function formatNumber(num) {
+  let formatedNum = num.replace(",", ".");
+  formatedNum = Number(formatedNum);
+  return Number(formatedNum);
+}
+
 function buttonReady() {
   if (selectedCounter >= 3) {
     button.innerHTML = "Fechar pedido";
@@ -17,8 +23,6 @@ function order() {
   if (selectedCounter >= 3) {
     orderPanel.classList.remove("hidden");
     overlay.classList.remove("hidden");
-  } else {
-    alert("Selecione três produtos de categorias diferentes!")
   }
 }
 
@@ -44,12 +48,6 @@ function addShadow(element) {
   buttonReady();
 }
 
-function formatNumber(num) {
-  let formatedNum = num.replace(",", ".");
-  formatedNum = Number(formatedNum);
-  return Number(formatedNum);
-}
-
 function addToReceipt(element, parent) {
 
   const receipt = document.querySelector(".receipt");
@@ -71,7 +69,22 @@ function removeFromReceipt(parentClass) {
   receiptTotal.innerHTML = totalSum.toFixed(2).replace(".", ",");
 }
 
+function whatsappOrder() {
+  const meal = document.querySelector(".receipt .meals span").innerHTML;
+  const drink = document.querySelector(".receipt .drinks span").innerHTML;
+  const dessert = document.querySelector(".receipt .desserts span").innerHTML;
+  const clientName = document.querySelector("#clientName").value;
+  const clientAdress = document.querySelector("#clientAdress").value;
+  console.log(clientName);
+
+  const message = encodeURIComponent(`Olá, gostaria de fazer o pedido:\n- Prato: ${meal}\n- Bebida: ${drink}\n- Sobremesa: ${dessert}\nTotal: R$ ${totalSum.toFixed(2)}\n\nNome: ${clientName}\nEndereço: ${clientAdress}`);
+
+  window.open(`https://api.whatsapp.com/send?phone=5511993894878&text=${message}`, "_blank").focus();
+  console.log(message);
+
+  //para quebrar linha, adicionar %0a no link
+}
+
 function addItem(element) {
   addShadow(element);
 }
-
