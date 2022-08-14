@@ -21,19 +21,19 @@
       <div class="food-container">
         <h2>Primeiro seu prato</h2>
         <div class="carrousel meals">
-          <div class="card meal" onclick="addBorder(this)">
+          <div class="card meal" onclick="addItem(this)">
             <img src="media/pizza.jpg" alt="">
             <h3>Pizza de Frango</h3>
-            <p class="descricao">Um pouco de frango, um pouco de queijo</p>
-            <p>R$ <span>14,90</span>
+            <p class="description">Um pouco de frango, um pouco de queijo</p>
+            <p>R$ <span class="price">14,90</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
-          <div class="card meal" onclick="addBorder(this)">
-            <img src="media/pizza.jpg" alt="">
-            <h3>Pizza de Frango</h3>
-            <p class="descricao">Um pouco de frango, um pouco de queijo</p>
-            <p>R$ <span>14,90</span>
+          <div class="card meal" onclick="addItem(this)">
+            <img src="media/salada.jpg" alt="">
+            <h3>Poke Fit</h3>
+            <p class="description">Frango, grãos, ovos cozidos e mix de folhas</p>
+            <p>R$ <span class="price">20,50</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
@@ -43,19 +43,19 @@
       <div class="food-container">
         <h2>Agora sua bebida</h2>
         <div class="carrousel drinks">
-          <div class="card drink" onclick="addBorder(this)">
+          <div class="card drink" onclick="addItem(this)">
             <img src="media/coca.jpg" alt="">
             <h3>Coca-cola</h3>
-            <p class="descricao">Lata 350ml</p>
-            <p>R$ <span>4,90</span>
+            <p class="description">Lata 350ml</p>
+            <p>R$ <span class="price">4,90</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
-          <div class="card drink" onclick="addBorder(this)">
-            <img src="media/coca.jpg" alt="">
-            <h3>Coca-cola</h3>
-            <p class="descricao">Lata 350ml</p>
-            <p>R$ <span>4,90</span>
+          <div class="card drink" onclick="addItem(this)">
+            <img src="media/sprite.webp" alt="">
+            <h3>Sprite</h3>
+            <p class="description">Lata 350ml</p>
+            <p>R$ <span class="price">5,90</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
@@ -65,19 +65,19 @@
       <div class="food-container">
         <h2>Por fim, sua sobremesa</h2>
         <div class="carrousel desserts">
-          <div class="card dessert" onclick="addBorder(this)">
+          <div class="card dessert" onclick="addItem(this)">
             <img src="media/bolinho.jpg" alt="">
             <h3>Cupcake</h3>
-            <p class="descricao">Apenas cupcake</p>
-            <p>R$ <span>7,90</span>
+            <p class="description">Apenas cupcake</p>
+            <p>R$ <span class="price">7,90</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
-          <div class="card dessert" onclick="addBorder(this)">
-            <img src="media/bolinho.jpg" alt="">
-            <h3>Cupcake</h3>
-            <p class="descricao">Apenas cupcake</p>
-            <p>R$ <span>7,90</span>
+          <div class="card dessert" onclick="addItem(this)">
+            <img src="media/morango.jpg" alt="">
+            <h3>Doce de morango</h3>
+            <p class="description">Deliciosos morangos com um merengue especial</p>
+            <p>R$ <span class="price">10,90</span>
               <ion-icon name="checkmark-circle"></ion-icon>
             </p>
           </div>
@@ -87,7 +87,7 @@
     </main>
 
     <footer>
-      <button onclick="order()">Selecione os 3 itens
+      <button onclick="order()" id="close-order">Selecione os 3 itens
         para fechar o pedido</button>
     </footer>
 
@@ -96,17 +96,11 @@
 
     <div class="close-order hidden">
       <h2>Confirme seu pedido</h2>
-      <div class="item">
-        <span>Frango Yin Yang</span>
-        <span>14,90</span>
-      </div>
-      <div class="item">
-        <span>Frango Yin Yang</span>
-        <span>14,90</span>
+      <div class="receipt">
       </div>
       <div class="total">
         <span>TOTAL</span>
-        <span>R$ 27,90</span>
+        <span id="total">0</span>
       </div>
       <button>Tudo certo, pode pedir!</button>
       <button onclick="cancelOrder()">Cancelar</button>

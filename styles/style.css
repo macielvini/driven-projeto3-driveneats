@@ -26,6 +26,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 999;
 
   background-color: var(--bg-header-accent);
   color: var(--fc-header);
@@ -51,7 +52,8 @@ header p {
 
 .carrousel {
   display: flex;
-  /* justify-content: flex-start; */
+  overflow-x: scroll;
+  padding-left: 2px;
 }
 
 .card {
@@ -59,14 +61,15 @@ header p {
   max-height: 216px;
   max-height: 100%;
 
+  /* position: relative; */
+
   display: flex;
   flex-direction: column;
 
   padding: 13px;
-  margin: 17px 17px 27px 0;
+  margin: 19px 17px 27px 0;
 
   background-color: var(--bg-card);
-  /* background-color: lightcyan; */
 
   border: none;
   border-radius: 9px;
@@ -83,7 +86,6 @@ button:hover {
 
 .selected {
   box-shadow: 0 0 2px 2px #32b72f;
-  /* border: 2px solid #32b72f; */
 }
 
 .button-ready {
@@ -112,7 +114,7 @@ h3 {
   margin: 6px 0;
 }
 
-.card .descricao {
+.card .description {
   color: var(--fc-light);
   font-weight: 300;
   font-size: 15px;
@@ -125,11 +127,21 @@ h3 {
 
   margin-top: 9px;
   width: 100%;
-  /* display: grid; */
+}
+
+.selected ion-icon {
+  display: inline-block;
+  text-align: center;
 }
 
 ion-icon {
   color: #32b72f;
+  font-size: 20px;
+
+  right: 10px;
+  bottom: 10px;
+
+  display: none;
 }
 
 footer {
