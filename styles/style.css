@@ -15,8 +15,13 @@ textarea {
   background-color: var(--bg-body);
 }
 
+body {
+  width: 100%;
+}
+
 .container {
-  width: 414px;
+  max-width: 500px;
+  margin: auto;
   margin-bottom: 110px;
 }
 
@@ -28,7 +33,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 1;
 
   background-color: var(--bg-header-accent);
   color: var(--fc-header);
@@ -54,16 +59,15 @@ header p {
 
 .carrousel {
   display: flex;
-  overflow-x: scroll;
   padding-left: 2px;
+  overflow-x: scroll;
 }
 
 .card {
-  width: 172px;
-  max-height: 216px;
-  max-height: 100%;
+  flex-shrink: 0;
 
-  /* position: relative; */
+  width: 172px;
+  max-height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -192,7 +196,8 @@ footer button {
   font-family: "Roboto", sans-serif;
   border-radius: 9px;
   font-size: 22px;
-  width: 377px;
+  min-width: 370px;
+  max-width: 400px;
 
   padding: 21px 25px 15px;
 
@@ -207,6 +212,7 @@ footer button {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   text-align: center;
+  margin-bottom: 28px;
 }
 
 .close-order .item {
@@ -216,7 +222,7 @@ footer button {
 }
 
 .total {
-  margin-bottom: 13px;
+  margin-bottom: 20px;
 
   display: flex;
   justify-content: space-between;
@@ -229,6 +235,10 @@ fieldset {
   border: 1px solid white;
   border-radius: 10px;
   padding: 7px;
+}
+
+legend {
+  padding: 0 5px;
 }
 
 .close-order input,
@@ -266,7 +276,7 @@ textarea:focus {
   color: #50d074;
   font-size: 22px;
   font-weight: 700;
-  margin: 10px 0 15px;
+  margin: 15px 0 15px;
 }
 
 .close-order button:last-of-type {
