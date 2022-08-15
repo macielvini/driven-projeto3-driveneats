@@ -79,10 +79,7 @@ function whatsappOrder() {
 
   const message = encodeURIComponent(`Olá, gostaria de fazer o pedido:\n- Prato: ${meal}\n- Bebida: ${drink}\n- Sobremesa: ${dessert}\nTotal: R$ ${totalSum.toFixed(2)}\n\nNome: ${clientName}\nEndereço: ${clientAdress}`);
 
-  window.open(`https://api.whatsapp.com/send?phone=5511966458442&text=${message}`, "_blank").focus();
-  console.log(message);
-
-  //para quebrar linha, adicionar %0a no link
+  window.open(`https://api.whatsapp.com/send?phone=5511912345678&text=${message}`, "_blank").focus();
 }
 
 function addItem(element) {
